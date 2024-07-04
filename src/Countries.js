@@ -6,7 +6,7 @@ const Countries = () => {
   useEffect(() => {
     fetch("https://xcountries-backend.azurewebsites.net/all")
       .then((res) => res.json())
-      .then((data) => setCountries(data));
+      .then((data) => setCountries(data)).catch((error)=>console.error("Error fetching data:",error.message));
   }, []);
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
